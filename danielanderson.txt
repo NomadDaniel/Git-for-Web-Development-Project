@@ -8,7 +8,7 @@ Copy the questions below into the firt-lastname.txt file on your github repo - a
     To give meaning to section, improves collaboration accross web dev and design.
 
     2. What is HTML used for?
-    Tells the browser what to render, blocks, containers
+    Tells the browser what to render, structural type components (blocks, containers)
 
     3. What is an attribute and where do we put it?
     It gives meaning to TAGs, we put it inside quotes in the TAG, i.e., <div class="attribute"> 
@@ -20,45 +20,142 @@ Copy the questions below into the firt-lastname.txt file on your github repo - a
 
     6. What do we put in the head of our HTML document? 
     !DOCUMENT, metadata, body
+    When writing in HTML, the <head> tag is used to contain specific information about a web page, 
+    often referred to as metadata. This information includes things like the title of the document 
+    (which is mandatory), as well as scripts or links to scripts, and CSS files.
 
     7. What is an id?
     A tag that is more specific that Class.
-     
-    8. What elements can I add an id to? 
-    9. How many times can I use the same id on a page? 
+    The id attribute specifies a unique id for an HTML element (the value must be unique within the 
+    HTML document). The id attribute is most used to point to a style in a style sheet, and by 
+    JavaScript (via the HTML DOM) to manipulate the element with the specific id.
+
+    8. What elements can I add an id to?
+    Tip: The id attribute can be used on any HTML element. Note: The id value is case-sensitive.
+    Note: The id value must contain at least one character, and must not contain whitespace (spaces, tabs, etc.).
+
+    9. How many times can I use the same id on a page?
+    An id must be unique in a page. Use a class if you want to describe a group of elements.
+
     10. What is a class? 
+    The class is an attribute which specifies one or more class names for an HTML element. The class attribute 
+    can be used on any HTML element. The class name can be used by CSS and JavaScript to perform certain tasks 
+    for elements with the specified class name.
+    
+
     11. What elements can I add a class to? 
-    12. How many times can I use the same class on a page? 
+    Any and all element.
+
+    12. How many times can I use the same class on a page?
+    Doesn't appear to have a limit (some crazy outliers though)
+
     13. How do I get my link to open in a new tab?
-    14. What is the alt attribute used for? 
+    example: <a href="/" target="_blank">The home page will open in another tab.</a>
+
+    14. What is the alt attribute used for?
+    accessibility, browser reads it to give context for users 
+
     15. How do I reference an id?
+    #
+
     16. What is the difference between a section and a div
-    17. What is CSS used for? 
+    section has meaning within the context of the page, div is more generic to create seperation
+
+    17. What is CSS used for?
+    Styling baby!
+
     18. How to we select an element? Example - every h2 on the page
+    h2 {
+        color: blue;
+    }
+
     19. What is the difference between a class and an id? - Give me an example of when I might use each one
+    Class is less specific and should be used for common styling groups, and ID should be used for for greater 
+    specificity.
+
+
     20. How do we select classes in CSS?
+    .class
+
     21. How do we select a p element with a single class of “human””?
+    .human p {    }
+
     22. What is a parent child selector? When would this be useful? 
+    The ("parent > child") selector selects all elements that are a direct child of the specified element.
+
+
     23. How do you select all links within a div with the class of sidebar?
+    div.sidebar {}
+
     24. What is a pseudo selector?
+    A pseudo-class is used to define a special state of an element.
+    For example, it can be used to:
+    Style an element when a user mouses over it
+    Style visited and unvisited links differently
+    Style an element when it gets focus
+    selector:pseudo-class {
+    property:value;
+    }
+    
     25. What do we use the change the spacing between lines?
+    line-height property in CSS
+
+
     26. What do we use to change the spacing between letters?
-    27. What do we use to to change everything to CAPITALS? lowercase? Capitalize?
+    letter-spacing: 2px; You can use pixel values. ...
+    letter-spacing: 0.1em; You can use em values: this allows the spacing to remain relative to the font-size.
+    
+    27. What do we use to to change everything to CAPITALS? lowercase? Capitalize? 
+    Capitalize, lowercase, uppercase
+    
     28. How do I add a 1px border around my div that is dotted and black?
-    29. How do I select everything on the page? 
+    div {
+    border:1px dotted black;
+    } 
+
+    29. How do I select everything on the page? *
+
     30. How do I write a comment in CSS?
-    31. How do I find out what file I am in, when I am using the command line? 
+    /*blahblahblah*/
+
+    31. How do I find out what file I am in, when I am using the command line?
+    pwd
+
     32. Using the command line - how do I see a list of files/folders in my current folder?
+    ls 
+
     33. How do I remove a file via the command line? Why do I have to be careful with this? 
+    rmv. no prompts or warnings, just bye-bye.
+
     34. Why should I use version control? 
+    Its essential for collarborative development, especially when a feature breaks you can revert back.
+
     35. How often should I commit to github?
-    36. What is the command we would use to push our repo up to github? 
+    Depends. ~20mins or when you get a feature workings.
+
+    36. What is the command we would use to push our repo up to github?
+    git push | git push origin daniel-anderson (this will get to my branch)
+
     37. Walk me through Lambda's git flow. 
+    Fork -> Add Collaborator (TL) -> Use terminal to clone in local directory (git clone "link from my 
+    forked master") -> Create branch in terminal (git checkout -b 'daniel-anderson') -> submit pull request
+    on GitHub and compare accross my forks (make small change in file first) -> TL then merges after review
+    Most frequent terminal commands will happen in VSStudio of add, commit, push (frequently checking status)
+
 
 Stretch Questions
 
     1. What is the difference between an inline element and a block element?
+    By default, block level elements take up the entire width of it's parent container. After it's reached 
+    the edge of the container it'll drop below the other elements. Inline elements don't start on new lines, 
+    meaning that they'll line up right next to each other on the same line if there's enough room for them.
+    
     2. What happens when an element is positioned absolutely? 
+    The top, right, bottom, and left properties specify offsets from the edges of the element's containing 
+    block. (The containing block is the ancestor relative to which the element is positioned.) If the element 
+    has margins, they are added to the offset. The element establishes a new block formatting context (BFC) 
+    for its contents.
+    
     3. How do I make an element take up only the amount of space it needs but also have the ability to give it a width? 
     4. Name 3 elements that are diplay block by default, 2 elements that are display inline by default and 1 element that is display inline-block by default
     5. In your own words, explain the box model. What is the fix for the box model? 
